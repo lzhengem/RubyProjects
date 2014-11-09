@@ -4,6 +4,7 @@
 #lab 5
 # Date: 2014-10-27
 # URL:  http://hills.ccsf.edu/~lzheng22/cs132a/bluecloth.cgi
+#Testing downloaded gem bluecloth
 
 ENV['GEM_HOME'] = '/students/lzheng22/mygems'
 ENV['GEM_PATH']= '/students/lzheng22/mygems'

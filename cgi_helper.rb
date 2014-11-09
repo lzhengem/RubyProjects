@@ -1,4 +1,5 @@
 #used for getclassinfo.cgi
+#defines ways to convert file to erb
 
 module CgiHelper
   require 'cgi'
@@ -19,12 +20,12 @@ module CgiHelper
     erb.result(binding)
   end
 
-  ########## Your methods go here ############
 
   def h(html) 
     CGI::escapeHTML(html) 
   end 
 
+#includes a http_header
   def http_header
     print "Content-type: text/html","\n\n";
 

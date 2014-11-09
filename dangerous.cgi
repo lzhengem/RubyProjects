@@ -4,8 +4,8 @@
 #lab 5
 # Date: 2014-10-27
 # URL:  http://hills.ccsf.edu/~lzheng22/cs132a/dangerous.cgi
-
-#!/usr/local/bin/ruby
+#if the text is considered "dangerous" ie containing: -`;*'" then do not output the message
+#if text is harmless, output the message
 
 require 'cgi'
 

@@ -3,7 +3,11 @@
 # File: threads.cgi
 # Date: 2014-10-30
 # URL:  http://hills.ccsf.edu/~lzheng22/cs132a/threads.cgi
+
+#practice the use of threads togenerate 10 different strings, all of which are outputting characters from
+#a-Z, each thread in its own color, and having its thread number in the subscript of the character
 print "Content-type: text/html","\n\n";
+
 
 
 puts "<html><body><h1>"
@@ -25,7 +29,7 @@ thread = Thread.new do
 	end 
 	print "<font color= #{colors[Thread.current[:num]]}>#{i}<sub>#{Thread.current[:num]}</sub></font> "
 	$stdout.flush
-	sleep (2/24)
+	sleep (1/24)
 end
 
 end
