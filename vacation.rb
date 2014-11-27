@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-
+#this program checks to see how much vacation time an employee has accrued
 require 'date'
 
 
@@ -46,10 +46,19 @@ def workdays_until
 	n
 end
 
+
+
 def accrued_hours
+	#hours accrued per day
+	less_than_5 = 120.0 / 52 / 5
+	more_than_5 = 160.0 / 52 / 5
+	
 	start = Date.parse(@start_date)
 	if Date.parse(date_of_hire).year - start.year < 5
-	workdays_until * 0.461 - @used_hours + @extra_hours
+	workdays_until * less_than_5 - @used_hours + @extra_hours
+
+    elsif Date.parse(date_of_hire).year - start.year > 5
+    workdays_until * more_than_5 - @used_hours + @extra_hours
 	end
 end
 
@@ -62,4 +71,4 @@ Lena.end_date = Date.today
 Lena.used_hours = 0
 Lena.extra_hours = 8 #flu shot
 
-Lena.accrued_hours
+puts Lena.accrued_hours
