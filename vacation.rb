@@ -2,6 +2,23 @@
 #this program checks to see how much vacation time an employee has accrued
 require 'date'
 
+vacation_used, extra_vacation, startaccrue = ARGV
+
+
+if ARGV.empty?
+	puts "Please enter hours used: "
+	vacation_used = $stdin.gets
+	puts "Please enter extra hours gained: "
+	extra_vacation = $stdin.gets
+	puts "Please enter your start accrue date: "
+	startaccrue = $stdin.gets
+end
+
+if startaccrue.nil? || startaccrue == "\n"
+	startaccrue = '20140101'
+end
+
+
 #each new employee gets their own data set
 class Employee
 	attr_accessor :date_of_hire, :start_date, :end_date, :used_hours, :extra_hours
@@ -41,11 +58,11 @@ end
 
 #test this out
 Lena = Employee.new
-Lena.date_of_hire = '14-10-08'
-Lena.start_date = '2014-10-08'
+Lena.date_of_hire = '20141008'
+Lena.start_date = startaccrue
 Lena.end_date = Date.today
-Lena.used_hours = 0
-Lena.extra_hours = 8
+Lena.used_hours = vacation_used.to_f
+Lena.extra_hours = extra_vacation.to_f
 
 puts Lena.accrued_hours
 
